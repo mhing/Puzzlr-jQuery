@@ -13,6 +13,38 @@ body {
 	line-height: 1;
 }
 
+.brand:hover {
+	text-decoration: none;
+	color: white;
+}
+
+.nav .navbar {
+	color: white;
+	display: block;
+}
+
+.nav:hover {
+	color: white;
+}
+
+.dropdown-toggle {
+	color: gray;
+	width: auto;
+	height: auto;
+	background-color: inherit;
+}
+
+.dropdown-toggle:hover {
+	color: white;
+	text-decoration: none;
+	background-color: inherit;
+}
+
+.dropdown-clicked {
+	color: white;
+	background-color: inherit;
+}
+
 img {
 	width: 100px;
 	height: 100px;

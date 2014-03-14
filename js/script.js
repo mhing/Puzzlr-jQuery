@@ -121,6 +121,10 @@ checkForVictory = function() {
 $(document).ready(function() {
 	shuffle();
 
+	$('.dropdown-toggle').click(function() {
+
+	});
+
     $('td').click(function() {
     	var clickedSpot = $(this).attr('id');
 		var openSpot = $('.open').attr('id');
@@ -155,7 +159,7 @@ $(document).ready(function() {
 		}
     });
 
-    $('button').click(function() {
+    $('#shuffle').click(function() {
 		var remainingPuzzle = findRemaining();
     });    
 });
