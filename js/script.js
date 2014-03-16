@@ -39,31 +39,41 @@ movePiece = function(cId, oId, dir) {
 shuffle = function() {
 	console.log("Shuffle pieces");
 	
+	for (var i = 0; i < 9; i++)
+	{
+		console.log(i + " empty");
+		$(document.getElementById(i)).empty();
+	}
+
 	var i = 0;
 
 	var arr = []
 	
 	while(arr.length < 8)
 	{
-		var randomnumber=Math.floor(Math.random()*8)
-		var found=false;
-		for(var i=0;i<arr.length;i++)
+		var randomnumber = Math.floor(Math.random() * 8)
+		var found = false;
+		for (var i = 0; i < arr.length; i++)
 		{
-			if(arr[i]==randomnumber)
+			if(arr[i] == randomnumber)
 			{
-				found=true;
+				found = true;
 				break;
 			}
 		}
 		
-		if(!found) 
+		if (!found) 
 		{
-			arr[arr.length]=randomnumber;
+			arr[arr.length] = randomnumber;
 		}
 	}
 
+	console.log(arr);
+
 	for (var i = 0; i < arr.length; i++)
 	{
+		console.log(i + " " + images[arr[i]]);
+		$(document.getElementById(i)).append("<img/>");
 		$(document.getElementById(i)).children('img').eq(0).attr('src', images[arr[i]]);
 	}
 };
@@ -121,10 +131,6 @@ checkForVictory = function() {
 $(document).ready(function() {
 	shuffle();
 
-	$('#dropdownMenu1').click(function() {
-		//$(this).addClass('blueTest');
-	});
-
     $('td').click(function() {
     	var clickedSpot = $(this).attr('id');
 		var openSpot = $('.open').attr('id');
@@ -161,5 +167,17 @@ $(document).ready(function() {
 
     $('#shuffle').click(function() {
 		var remainingPuzzle = findRemaining();
-    });    
+    }); 
+
+	$('#restart').click(function() {
+		for (var i = 0; i < 8; i++) // run through elements, reset open to id 8
+		{
+			$(document.getElementById(i)).removeClass('open');
+			$(document.getElementById(i)).empty(); // remove all images
+		}
+
+		$(document.getElementById('8')).addClass('open');
+		
+		shuffle();
+	}); 
 });

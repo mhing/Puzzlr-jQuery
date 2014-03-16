@@ -27,60 +27,89 @@
 		</script>
 	</head>
 	<body>
-		<header class="navbar navbar-fixed-top navbar-inverse">
-			<div class="navbar-inner">
-				<div class="container">
-					<a class="brand">Puzzlr</a>
-					<button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">Info<span class="caret"></span></button>
-					<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-						<li role="presentation"><a role="menuitem" tabindex="-1">How To Play</a></li>
-						<li role="presentation"><a role="menuitem" tabindex="-1">About Puzzlr</a></li>
-					</ul>
-				</div>
+		<!-- Header Bar -->
+		<header class="navbar navbar-fixed-top">
+			<nav class="navbar navbar-inverse" role="navigation">
+				<div class="container-fluid">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#info-collapse-menu">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a id="brand" class="navbar-brand">Puzzlr</a>
+					</div>
+
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse" id="info-collapse-menu">
+						<ul class="nav navbar-nav">
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Select Game <b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<li><a href="#">3x3</a></li>
+									<li class="divider"></li>
+									<li><a href="#">4x4 (Coming Soon)</a></li>
+									<li><a href="#">5x5 (Coming Soon)</a></li>
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Info <b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<li><a href="#">How to play</a></li>
+									<li><a href="#">About Puzzlr</a></li>
+								</ul>
+							</li>
+						</ul><!-- /.navbar items -->	
+					</div><!-- /.navbar-collapse -->
+				</div><!-- /.container-fluid -->
+			</nav>
+		</header><!-- /.header nav bar -->
+		<!-- Container -->
+		<!-- <div class="game-info">
+			<div class="timer">
+				<h3 class="title">00:00</h1>
 			</div>
-		</header>
-		<div class="container">
-			<div class="row">
+			<p class="game-intro">Move puzzle pieces to make the image.</p>
+		</div> -->
+		<div class="container-fluid"> <!-- game-container -->
+			<div class="col-md-3 center-btn">
+				<button type="button" class="btn btn-primary disabled" id="shuffle">Shuffle Remaining Pieces</button>
+			</div>
+			<div class="col-md-6 game-container">
 			    <table>
 			        <tbody>
 			            <tr>
-			                <td id="0">
-			                    <img />
-			                </td>
-			                <td id="1">
-			                    <img />
-			                </td>
-			                <td id="2">
-			                    <img />
-			                </td>
+			                <td id="0"><img /></td>
+			                <td id="1"><img /></td>
+			                <td id="2"><img /></td>
 			            </tr>
 			            <tr>
-			                <td id="3">
-			                    <img />
-			                </td>
-			                <td id="4">
-			                    <img />
-			                </td>
-			                <td id="5">
-			                    <img />
-			                </td>
+			                <td id="3"><img /></td>
+			                <td id="4"><img /></td>
+			                <td id="5"><img /></td>
 			            </tr>
 			            <tr>
-			                <td id="6">
-			                    <img />
-			                </td>
-			                <td  id="7">
-			                    <img />
-			                </td>
-			                <td class="open" id="8">
-			                </td>
+			                <td id="6"><img /></td>
+			                <td id="7"><img /></td>
+			                <td class="open" id="8"></td>
 			            </tr>
 			        </tbody>
 			    </table>
 			</div>
-		    <div class="row">
-		    	<button type="button" class="btn btn-primary" id="shuffle">Shuffle Remaining Pieces</button>
-		    </div>
-		</div>
+			<div class="col-md-3 center-btn">
+				<div class="row">
+					<div class="col-md-12">
+						<button type="button" class="btn btn-primary" id="restart">Restart Game</button>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<button type="button" class="btn btn-primary disabled" id="new-image">New Image</button>
+					</div>
+				</div>
+			</div>
+		</div> <!-- /.game-container -->
 	</body>
 </html>

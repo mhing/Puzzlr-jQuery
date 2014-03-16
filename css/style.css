@@ -2,8 +2,7 @@ body {
   padding-top: 60px;
 }
 
-.brand {
-	float: left;
+#brand {
 	margin-right: 10px;
 	font-size: 1.7em;
 	color: white;
@@ -11,9 +10,17 @@ body {
 	padding-top: 9px;
 	font-weight: bold;
 	line-height: 1;
+	cursor: default;
+
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
-.brand:hover {
+#brand:hover {
 	text-decoration: none;
 	color: white;
 }
@@ -45,9 +52,61 @@ body {
 	background-color: inherit;
 }
 
-.blueTest {
-	color: gray;
+
+/* Container */
+
+.game-info {
+	margin-top: 40px;
+	position: relative;
+	padding: 15px;
+	cursor: default;
+	border-radius: 6px;
+	width: 500px;
 }
+
+.game-intro {
+  margin-bottom: 0; 
+}
+
+.title {
+	width: 100%;
+	margin: auto;
+}
+
+
+/* Game Container */
+
+.game-container {
+	margin-top: 40px;
+	position: relative;
+	padding: 25px 15px 25px 15px;
+	cursor: default;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	background: #bbada0;
+	border-radius: 6px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.center-btn {
+	margin-top: 40px;
+	text-align: center;
+}
+
+#shuffle {
+	margin-top: 164px;
+	margin-bottom: 10px;
+}
+
+#restart {
+	margin-top: 148px;
+	margin-bottom: 10px;
+}
+
+/* Puzzle Table */
 
 img {
 	width: 100px;
@@ -55,6 +114,10 @@ img {
 }
 
 table {
+	margin: auto;
     background-color: black;
     table-layout: fixed;
+    border: 5px solid white;
+    position: relative;
+    /*margin: 80px;*/
 }
