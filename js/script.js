@@ -121,8 +121,8 @@ checkForVictory = function() {
 $(document).ready(function() {
 	shuffle();
 
-	$('.dropdown-toggle').click(function() {
-
+	$('#dropdownMenu1').click(function() {
+		//$(this).addClass('blueTest');
 	});
 
     $('td').click(function() {
