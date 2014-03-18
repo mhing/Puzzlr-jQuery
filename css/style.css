@@ -2,6 +2,10 @@ body {
   padding-top: 60px;
 }
 
+.squared {
+	border-radius: 0px;
+}
+
 #brand {
 	margin-right: 10px;
 	font-size: 1.7em;
