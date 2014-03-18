@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<!-- <link rel="stylesheet" href="css/jquery-ui-1.10.4.custom.css"> -->
 		<link type="text/css" rel="stylesheet" href="css/style.css">
 		
 		<script src="js/jquery.js"></script>
@@ -49,15 +50,14 @@
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Select Game <b class="caret"></b></a>
 								<ul class="dropdown-menu">
 									<li><a href="#">3x3</a></li>
-									<li class="divider"></li>
-									<li><a href="#">4x4 (Coming Soon)</a></li>
-									<li><a href="#">5x5 (Coming Soon)</a></li>
+									<li class="disabled"><a href="#">4x4 (Coming Soon)</a></li>
+									<li class="disabled"><a href="#">5x5 (Coming Soon)</a></li>
 								</ul>
 							</li>
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Info <b class="caret"></b></a>
 								<ul class="dropdown-menu">
-									<li><a href="#">How to play</a></li>
+									<li><a data-toggle="modal" href="#instructions">How to play</a></li>
 									<li><a href="#">About Puzzlr</a></li>
 								</ul>
 							</li>
@@ -73,40 +73,76 @@
 			</div>
 			<p class="game-intro">Move puzzle pieces to make the image.</p>
 		</div> -->
+
+<div class="modal hide" id="instructions">
+	<div class="modal-header">
+		<a class="close" data-dismiss="modal">×</a>
+		<h3>How To Play Klondike Solitaire</h3>
+	</div>
+	<div class="modal-body">
+		<h4>Goal</h4>
+
+		<p>The goal is to move all cards to the four <strong>foundations</strong> on the upper right.</p>
+
+		<h4>Turning and Moving</h4>
+
+		<p>Click the <strong>stock</strong> (on the upper left) to turn over cards onto the <strong>waste pile</strong>.</p>
+
+		<p>Drag cards to move them between the waste pile, the seven <strong>tableau</strong> columns (at the bottom), and the four foundations. You can also double-click cards instead of dragging them to a foundation.</p>
+
+		<p>You may move single cards or piles of cards within the tableau. You may only move cards <em>off</em> the waste pile, but you may <em>onto</em> and <em>off</em> the foundations.</p>
+
+		<p>Any time you expose a face-down card in a tableau column, that card is automatically turned face-up for you.</p>
+
+		<h4>Build Rules</h4>
+
+		<p>Cards on the foundations need to be stacked by the same suit from Ace to King.</p>
+
+		<p>Cards on the tableau need to be stacked by alternating color from high rank (King) to low rank (Ace). Empty spots on the tableau can be filled with a King of any suit.</p>
+	</div>
+	<div class="modal-footer">
+		<a class="btn" data-dismiss="modal" href="#">Close</a>
+	</div>
+</div>
+
 		<div class="container-fluid"> <!-- game-container -->
-			<div class="col-md-3 center-btn">
-				<button type="button" class="btn btn-primary disabled" id="shuffle">Shuffle Remaining Pieces</button>
-			</div>
-			<div class="col-md-6 game-container">
-			    <table>
-			        <tbody>
-			            <tr>
-			                <td id="0"><img /></td>
-			                <td id="1"><img /></td>
-			                <td id="2"><img /></td>
-			            </tr>
-			            <tr>
-			                <td id="3"><img /></td>
-			                <td id="4"><img /></td>
-			                <td id="5"><img /></td>
-			            </tr>
-			            <tr>
-			                <td id="6"><img /></td>
-			                <td id="7"><img /></td>
-			                <td class="open" id="8"></td>
-			            </tr>
-			        </tbody>
-			    </table>
-			</div>
-			<div class="col-md-3 center-btn">
-				<div class="row">
-					<div class="col-md-12">
-						<button type="button" class="btn btn-primary" id="restart">Restart Game</button>
+			<div class="row">
+				<div class="col-sm-10 col-sm-offset-3">
+					<div class="game-container">
+						<div id="winner-popup">
+							<p id="winner-message">Congratulations You Beat Puzzlr!</p>
+							<p id="score"></p>
+						</div>
+					    <table>
+					        <tbody>
+					            <tr>
+					                <td id="0"><img /></td>
+					                <td id="1"><img /></td>
+					                <td id="2"><img /></td>
+					            </tr>
+					            <tr>
+					                <td id="3"><img /></td>
+					                <td id="4"><img /></td>
+					                <td id="5"><img /></td>
+					            </tr>
+					            <tr>
+					                <td id="6"><img /></td>
+					                <td id="7"><img /></td>
+					                <td class="open" id="8"></td>
+					            </tr>
+					        </tbody>
+					    </table>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-md-12">
+			</div>
+			<div class="row">
+				<div class="col-sm-10 col-sm-offset-3">
+					<div class="row-fluid top-row">
+						<button type="button" class="btn btn-primary" id="shuffle">Shuffle Remaining Pieces</button>
+					</div>
+					<div class="row-fluid bottom-row">
 						<button type="button" class="btn btn-primary disabled" id="new-image">New Image</button>
+						<button type="button" class="btn btn-primary" id="restart">Restart Game</button>
 					</div>
 				</div>
 			</div>
