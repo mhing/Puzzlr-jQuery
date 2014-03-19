@@ -255,6 +255,34 @@ newGameSetup = function() {
 
 
 $(document).ready(function() {
+	$('#dialog-instructions, #dialog-about').dialog({
+		dialogClass: "no-close close-button",
+		autoFocus: false,
+		autoOpen: false,
+		draggable: false,
+		height: 500,
+		width: 550,
+		modal: true,
+		buttons: [
+			{
+				text: "Close",
+				click: function() {
+					$( this ).dialog( "close" );
+				}
+			}
+		]
+	});
+
+	$('#instructions').click(function() {
+		$('#dialog-about').dialog("close");
+		$('#dialog-instructions').dialog("open");
+	});
+
+	$('#about').click(function() {
+		$('#dialog-instructions').dialog("close");
+		$('#dialog-about').dialog("open");
+	});
+
 	$("#winner-popup").hide();
 	startTime = new Date();
 

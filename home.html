@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<!-- <link rel="stylesheet" href="css/jquery-ui-1.10.4.custom.css"> -->
+		<link rel="stylesheet" href="css/jquery-ui-1.10.4.custom.css">
 		<link type="text/css" rel="stylesheet" href="css/style.css">
 		
 		<script src="js/jquery.js"></script>
@@ -50,15 +50,15 @@
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Select Game <b class="caret"></b></a>
 								<ul class="dropdown-menu">
 									<li><a href="#">3x3</a></li>
-									<li class="disabled"><a href="#">4x4 (Coming Soon)</a></li>
-									<li class="disabled"><a href="#">5x5 (Coming Soon)</a></li>
+									<li class="disabled"><a>4x4 (Coming Soon)</a></li>
+									<li class="disabled"><a>5x5 (Coming Soon)</a></li>
 								</ul>
 							</li>
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Info <b class="caret"></b></a>
 								<ul class="dropdown-menu">
-									<li><a data-toggle="modal" href="#instructions">How to play</a></li>
-									<li><a href="#">About Puzzlr</a></li>
+									<li id="instructions"><a>How to play</a></li>
+									<li id="about"><a>About Puzzlr</a></li>
 								</ul>
 							</li>
 						</ul><!-- /.navbar items -->	
@@ -67,43 +67,37 @@
 			</nav>
 		</header><!-- /.header nav bar -->
 		<!-- Container -->
-		<!-- <div class="game-info">
-			<div class="timer">
-				<h3 class="title">00:00</h1>
+
+		<div id="dialog-instructions" title="How To Play Puzzlr" class="ui-dialog">
+			<div class="ui-dialog-titlebar"></div>
+			<div class="ui-dialog-content">
+				<h4>Goal</h4>
+				<p>The goal is to move all the puzzle pieces into their correct position, thus revealing a completed image.</p>
+
+				<h4>Moving</h4>
+				<p>Click a piece neighboring the empty slot (black square) to slide the piece into the empty slot.</p>
+				<p>Click the <strong>Shuffle Remaining Pieces</strong> button to shuffle the pieces and continue to solve the puzzle. Can only be used once per game.</p>
+				<p>Click the <strong>Reset Button</strong> to restart the game.</p>
+
+				<h4>Winning</h4>
+				<p>When you win the game, your score will be displayed and you will have the option to select a new image or restart the game with the default image.</p>
 			</div>
-			<p class="game-intro">Move puzzle pieces to make the image.</p>
-		</div> -->
+		</div>
 
-<div class="modal hide" id="instructions">
-	<div class="modal-header">
-		<a class="close" data-dismiss="modal">×</a>
-		<h3>How To Play Klondike Solitaire</h3>
-	</div>
-	<div class="modal-body">
-		<h4>Goal</h4>
-
-		<p>The goal is to move all cards to the four <strong>foundations</strong> on the upper right.</p>
-
-		<h4>Turning and Moving</h4>
-
-		<p>Click the <strong>stock</strong> (on the upper left) to turn over cards onto the <strong>waste pile</strong>.</p>
-
-		<p>Drag cards to move them between the waste pile, the seven <strong>tableau</strong> columns (at the bottom), and the four foundations. You can also double-click cards instead of dragging them to a foundation.</p>
-
-		<p>You may move single cards or piles of cards within the tableau. You may only move cards <em>off</em> the waste pile, but you may <em>onto</em> and <em>off</em> the foundations.</p>
-
-		<p>Any time you expose a face-down card in a tableau column, that card is automatically turned face-up for you.</p>
-
-		<h4>Build Rules</h4>
-
-		<p>Cards on the foundations need to be stacked by the same suit from Ace to King.</p>
-
-		<p>Cards on the tableau need to be stacked by alternating color from high rank (King) to low rank (Ace). Empty spots on the tableau can be filled with a King of any suit.</p>
-	</div>
-	<div class="modal-footer">
-		<a class="btn" data-dismiss="modal" href="#">Close</a>
-	</div>
-</div>
+		<div id="dialog-about" title="About Puzzlr" class="ui-dialog">
+			<div class="ui-dialog-titlebar"></div>
+			<div class="ui-dialog-content">
+				<h4>Software</h4>
+				<p>The frontend relies on the use of the jQuery and jQUery UI libraries and the Bootstrap toolkit.</p>
+				</br>
+				<h4>Game Play</h4>
+				<p>For now, Puzzlr only supports playing with a 3x3 puzzle using the default image.</p>
+				<p>The next two iterations will add the ability to use user selected images and then the ability to solve a 4x4 and 5x5 puzzle.</p>
+				</br>
+				<hr>
+				<p>Developed by: Matt Hinger</p>
+			</div>
+		</div>
 
 		<div class="container-fluid"> <!-- game-container -->
 			<div class="row">
