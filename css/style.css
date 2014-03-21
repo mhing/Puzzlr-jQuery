@@ -42,6 +42,15 @@ nav {
 	color: white;
 }
 
+.header-dropdown li a {
+	
+}
+
+.header-dropdown li a:hover {
+	color: white;
+	background-color: #5ed1ba;
+}
+
 .dropdown-toggle {
 	color: gray;
 	width: auto;
