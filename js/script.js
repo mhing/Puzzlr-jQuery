@@ -221,6 +221,10 @@ shuffleRemaining = function(pieces) {
 		}
 	}
 
+	console.log("Remaining: " + remainingPuzzle);
+	console.log("Shuffled: " + shuffled);
+	console.log("Solved: " + solved);
+
 	var newImages = [];
 
 	for (var i = 0; i < remainingPuzzle.length; i++)
@@ -228,15 +232,25 @@ shuffleRemaining = function(pieces) {
 		newImages.push(remainingPuzzle[shuffled[i]]);
 	}
 
+	console.log("New Images: " + newImages);
+
 	for (var i = 0; i < remainingPuzzle.length; i++)
 	{
 		$(document.getElementById(remainingPuzzle[i])).empty();
+		$(document.getElementById(remainingPuzzle[i])).removeClass("open");
 	}
 
 	for (var i = 0; i < newImages.length; i++)
 	{
-		$(document.getElementById(remainingPuzzle[i])).append("<img/>");
-		$(document.getElementById(remainingPuzzle[i])).children('img').eq(0).attr('src', images[newImages[i]]);	
+		if (newImages[i] === 8)
+		{
+			$(document.getElementById(remainingPuzzle[i])).addClass("open");
+		}
+		else
+		{
+			$(document.getElementById(remainingPuzzle[i])).append("<img/>");
+			$(document.getElementById(remainingPuzzle[i])).children('img').eq(0).attr('src', images[newImages[i]]);	
+		}
 	}
 
 	movesTaken++; // count shuffle as a move
